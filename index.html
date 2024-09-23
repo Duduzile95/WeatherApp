@@ -3,15 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" style href="src/style.css" />
     <title>My-Weather-App</title>
   </head>
-  <body>
-    <header>
-      <form>
-        <input type="search" />
-        <input type="submit" value="search" />
-      </form>
-    </header>
+  <body></body>
+    <div class="content">
+      <header>
+        <form class="city-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="city-button"
+            id="city-button"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 id="city-name">Paris</h1>
+            <p class="description">
+              <span id="current-date">Saturday 15:23 </span>, moderate rain
+              <br />
+              Humidity: <span class="humidity">80%</span>, Wind:
+              <span class="speed">7.2km/h</span>
+            </p>
+          </div>
+          <span class="icon">☀️ </span>
+          <span class="temperature" id="temp">20°C</span>
+        </div>
+      </main>
     <footer>
       <p>
         <span class="footer">
