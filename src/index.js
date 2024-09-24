@@ -46,6 +46,7 @@ function searchCity(event) {
         cityNameElement.innerHTML = city;
 
         
+        
         let apiKey = "d270ff52dt3f3obd13aba943d507af34";
         let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
@@ -63,6 +64,14 @@ function searchCity(event) {
   function showTemperature(response) {
     if (response.data && response.data.temperature) {
     let temperature = Math.round(response.data.temperature.current);
+    let descriptionElement = document.querySelector("#description");
+        descriptionElement.innerHTML = response.data.condition.description;
+let humidityElement = document.querySelector("#humidity");
+humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+let speedElement = document.querySelector("#wind-speed");
+speedElement.innerHTML= `${response.data.wind.speed}km/hr`;
+let timeElement = document.querySelector("#time");
+timeElement.innerHTML = `${response.data.time}`;
 
     let temperatureElement = document.querySelector("#temp");
     if (temperatureElement){
