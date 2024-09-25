@@ -66,19 +66,18 @@ function searchCity(event) {
     let temperature = Math.round(response.data.temperature.current);
     let descriptionElement = document.querySelector("#description");
         descriptionElement.innerHTML = response.data.condition.description;
-let humidityElement = document.querySelector("#humidity");
-humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-let speedElement = document.querySelector("#wind-speed");
-speedElement.innerHTML= `${response.data.wind.speed}km/hr`;
-let timeElement = document.querySelector("#time");
-timeElement.innerHTML = `${response.data.time}`;
-
+    let humidityElement = document.querySelector("#humidity");
+        humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    let speedElement = document.querySelector("#wind-speed");
+        speedElement.innerHTML= `${response.data.wind.speed}km/h`;
+    let iconElement = document.querySelector("#icon");
+        iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_Url}" />`;
     let temperatureElement = document.querySelector("#temp");
-    if (temperatureElement){
-    temperatureElement.innerHTML = `${temperature}°C`;
-    } else{
-      console.error("notfound.");
-    }
+        if (temperatureElement){
+           temperatureElement.innerHTML = `${temperature}°C`;
+         } else{
+            console.error("notfound.");
+               }
     
     }
   }
