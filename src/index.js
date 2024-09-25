@@ -64,6 +64,8 @@ function searchCity(event) {
   function showTemperature(response) {
     if (response.data && response.data.temperature) {
     let temperature = Math.round(response.data.temperature.current);
+    let temperatureElement = document.querySelector("#temp");
+        temperatureElement.innerHTML = `${temperature}°C`;
     let descriptionElement = document.querySelector("#description");
         descriptionElement.innerHTML = response.data.condition.description;
     let humidityElement = document.querySelector("#humidity");
@@ -71,10 +73,8 @@ function searchCity(event) {
     let speedElement = document.querySelector("#wind-speed");
         speedElement.innerHTML= `${response.data.wind.speed}km/h`;
     let iconElement = document.querySelector("#icon");
-        iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_Url}" />`;
-    let temperatureElement = document.querySelector("#temp");
-        temperatureElement.innerHTML = `${temperature}°C`;
-         
+        iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_Url}" class = "icon"/>`;
+    
             
                
     
