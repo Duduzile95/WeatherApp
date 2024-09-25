@@ -73,11 +73,10 @@ function searchCity(event) {
     let iconElement = document.querySelector("#icon");
         iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_Url}" />`;
     let temperatureElement = document.querySelector("#temp");
-        if (temperatureElement){
-           temperatureElement.innerHTML = `${temperature}°C`;
-         } else{
-            console.error("notfound.");
-               }
+        temperatureElement.innerHTML = `${temperature}°C`;
+         
+            
+               
     
     }
   }
