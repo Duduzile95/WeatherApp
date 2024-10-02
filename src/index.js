@@ -73,9 +73,9 @@ function searchCity(event) {
     let speedElement = document.querySelector("#wind-speed");
         speedElement.innerHTML= `${response.data.wind.speed}km/h`;
     let iconElement = document.querySelector("#icon");
-        iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_Url}" class = "icon"/>`;
+        iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_url}" class = "icon"/>`;
     
-            
+           
                
     
     }
