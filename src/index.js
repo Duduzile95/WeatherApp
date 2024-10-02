@@ -83,3 +83,4 @@ function searchCity(event) {
 }
 document.getElementById("city-form");
 document.addEventListener("submit", searchCity);
+showTemperature();
