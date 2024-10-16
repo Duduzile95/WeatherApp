@@ -75,7 +75,7 @@ h1 {
     color: darkblue;
     font-weight: bold;
 }
-.weather-app-forecast {
+.weather-forecast {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
@@ -99,6 +99,7 @@ color:darkblue ;
 margin-top: 10px;
 display: flex;
 justify-content: center;
+
 }
 .weather-forecast-temperature {
   padding: 0 10px;  
