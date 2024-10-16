@@ -15,7 +15,7 @@ h1 {
     margin: 0 auto;
     padding: 30px 60px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 800px;
     background-image: linear-gradient(to top, white 0%, white 100%);
 }
 
@@ -38,6 +38,7 @@ h1 {
     padding: 20px;
     line-height: 1;
     border-radius: 5px;
+    width: 20%;
 }
 
 .current-weather {
@@ -79,12 +80,14 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+    width: 100%;
 }
 
 #forecast {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+
 }
 
 .weather-forecast-date{
@@ -95,7 +98,7 @@ h1 {
   margin-bottom: 10px; 
 }
 .weather-forecast-icon {
-   font-size: 38px;
+   width: 100%;
    text-align: center; 
 }
 
