@@ -75,7 +75,7 @@ function searchCity(event) {
     let iconElement = document.querySelector("#icon");
         iconElement.innerHTML = `<Img src =" ${response.data.condition.icon_url}" class = "icon"/>`;
     
-           
+       getForecast(response.data.city);    
                
     
     }
@@ -83,7 +83,14 @@ function searchCity(event) {
 }
 document.getElementById("city-form");
 document.addEventListener("submit", searchCity);
-showTemperature();
+
+function getForecast (city){
+   let apiKey = "d270ff52dt3f3obd13aba943d507af34";
+   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+   axios.get(apiUrl).then(displayForecast);
+}
+
+
 
 function displayForecast() {
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -107,6 +114,5 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
-
-
 displayForecast();
+
