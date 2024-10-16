@@ -1,3 +1,10 @@
+function toTitleCase(str) {
+    return str
+        .toLowerCase()
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+}
 
 function formattedDate(){
 let currentDate = new Date();
@@ -30,7 +37,7 @@ formattedDate();
 
 
 function searchCity(event) {
-
+event.preventDefault();
 
   
   let cityInput = document.getElementById("city-button");
@@ -42,7 +49,7 @@ function searchCity(event) {
       let cityNameElement = document.getElementById("city-name");
 
       if (cityNameElement) {
-        
+        city = toTitleCase(city);
         cityNameElement.innerHTML = city;
 
         
@@ -83,18 +90,6 @@ function searchCity(event) {
 }
 document.getElementById("city-form");
 document.addEventListener("submit", searchCity);
-
-document.addEventListener("DOMContentLoaded", function() {
-      let defaultCity = "Harare";
-    let cityInput = document.getElementById("city-button");
-
-        if (cityInput) {
-        cityInput.value = defaultCity;
-    }
-
-        searchCity(new Event('submit'));
-});
-searchCity();
 
 function getForecast (city){
    let apiKey = "d270ff52dt3f3obd13aba943d507af34";
