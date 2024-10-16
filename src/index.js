@@ -30,7 +30,7 @@ formattedDate();
 
 
 function searchCity(event) {
-  event.preventDefault();
+
 
   
   let cityInput = document.getElementById("city-button");
@@ -84,12 +84,24 @@ function searchCity(event) {
 document.getElementById("city-form");
 document.addEventListener("submit", searchCity);
 
+document.addEventListener("DOMContentLoaded", function() {
+      let defaultCity = "Harare";
+    let cityInput = document.getElementById("city-button");
+
+        if (cityInput) {
+        cityInput.value = defaultCity;
+    }
+
+        searchCity(new Event('submit'));
+});
+searchCity();
+
 function getForecast (city){
    let apiKey = "d270ff52dt3f3obd13aba943d507af34";
    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
    axios.get(apiUrl).then(displayForecast);
 }
-function formatDay() {
+function formatDay(timestamp) {
   let date = new Date(timestamp*1000);
   let days = [
   "Sun",
@@ -108,7 +120,8 @@ function displayForecast(response) {
   
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
     forecastHtml += `
       <div class="weather-app-forecast">
         <div class="weather-forecast-day"></div>
@@ -122,7 +135,7 @@ function displayForecast(response) {
         </div>
       </div>
     `;
-    
+    }
   });
 
   
