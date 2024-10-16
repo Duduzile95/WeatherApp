@@ -106,7 +106,7 @@ forecastHtml +
          `;
 } );
 }
-let forecastElement = document.querySelector("forecast");
+let forecastElement = document.querySelector("#forecast");
 forecastElement.innerHTML = forecastHTML;
 
 displayForecast();
