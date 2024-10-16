@@ -87,16 +87,15 @@ showTemperature();
 
 
 function displayForecast(){
-
-
+  let forecastElement = document.querySelector("#forecast");
 let days = [ "Tue", "Wed", "Thu", "Fri", "Sat"];
 let forecastHtml = "";
-days.forEach(function (day) {
 
-forecastHtml = 
-forecastHtml + 
-`
- <div class="weather-forecast-day">
+days.forEach(function (day) {
+forecastHtml= forecastHtml +
+      `
+        <div class="weather-app-forecast" >
+        <div class="weather-forecast-day"></div>
         <div class="weather-forecast-date"> ${day}</div>
           <div class="weather-forecast-icon">☀️</div> 
           <div class="weather-forecast-temperatures">
@@ -107,7 +106,6 @@ forecastHtml +
          `;
 } );
 }
-let forecastElement = document.querySelector("#forecast");
-forecastElement.innerHTML = forecastHTML;
 
+forecastElement.innerHTML = forecastHtml;
 displayForecast();
