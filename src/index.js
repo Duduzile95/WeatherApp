@@ -85,6 +85,7 @@ document.getElementById("city-form");
 document.addEventListener("submit", searchCity);
 showTemperature();
 
+
 function displayForecast(){
 
 

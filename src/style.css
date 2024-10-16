@@ -76,7 +76,7 @@ h1 {
     font-weight: bold;
 }
 .weather-forecast {
-    display: flex;
+    display: flexbox;
     justify-content: space-around;
     margin-top: 30px;
 }
